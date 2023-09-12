@@ -1,0 +1,42 @@
+/* LandingPage.css */
+
+.landing-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .slide-button-container {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+  }
+  
+  .slide-button {
+    width: 100px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .slide-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .slide-button.slide-complete {
+    transform: translateX(100%);
+  }
+  
+  .slide-button-container.sliding .slide-button {
+    background-color: #ccc;
+    cursor: grabbing;
+  }
+  
+  .redirect-message {
+    text-align: center;
+    margin-top: 20px;
+  }
+  

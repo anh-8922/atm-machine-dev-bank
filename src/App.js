@@ -1,12 +1,19 @@
-//import logo from './logo.svg';
 //import './App.css';
-import ATMApp from './Components/PinAuthentication';
+import { BrowserRouter } from 'react-router-dom';
+import AllRoutes from './AllRoutes';
+//import 'bootstrap/dist/css/bootstrap.min.css'
+//import SearchContextFunction from './Context/SearchContext'
 
 function App() {
+  
   return (
-    <>
-      <ATMApp/>
-    </>
+    <BrowserRouter>
+        {/*<SearchContextFunction>*/}
+          <div>
+            <AllRoutes/>
+          </div>
+        {/*</SearchContextFunction>*/}
+    </BrowserRouter>
   );
 }
 
