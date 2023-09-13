@@ -1,0 +1,33 @@
+.transaction-types {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 70vh;
+ gap: 5rem
+}
+.type-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 2rem;
+    list-style-type: none;
+}
+.type-list > li {
+    background-color: #F49C25;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.type-items {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+}

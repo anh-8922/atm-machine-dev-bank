@@ -1,20 +1,52 @@
 /* LandingPage.css */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+:root{
+  --main-blue: #134677;
+  --orange: #FE7F02;
+}
+.layout-body {
+    background-color: var(--main-blue);
+    height: 100vh;
+    color: whitesmoke;
+}
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  ;
+}
 
-.landing-page {
-    text-align: center;
-    padding: 20px;
-  }
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: var(--main-blue);
+}
   
   .slide-button-container {
-    position: relative;
-    width: 200px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    padding: 5rem;
   }
-  
+  .slide-button-border {
+    border: 2px solid grey;
+    width: 200px;
+  }
   .slide-button {
     width: 100px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: var(--orange);
     color: white;
     border: none;
     border-radius: 5px;

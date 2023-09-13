@@ -1,0 +1,14 @@
+.cash-withdrawal-box {
+    background-color: whitesmoke;
+    color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 5rem 0;
+    
+}
+
+.Withdrawal-label {
+    padding: 2rem 0;
+}

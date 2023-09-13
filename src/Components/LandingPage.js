@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import '../StyleSheet/landingpage.css';
+import MainLayout from "../MainLayout";
 
 export default function Landing() {
     const navigate = useNavigate();
@@ -21,23 +22,30 @@ export default function Landing() {
   };
 
   return (
-    <div className="landing-page">
-      <h1>Welcome to the ATM App</h1>
-      <div className={`slide-button-container ${isSliding ? 'sliding' : ''}`}>
-        <p>Slide to Enter</p>
-        <button
-          onMouseDown={handleSlideStart}
-          onMouseUp={handleSlideEnd}
-          onTouchStart={handleSlideStart}
-          onTouchEnd={handleSlideEnd}
-          className={`slide-button ${isSliding ? 'slide-complete' : ''}`}
-        >
-          Slide
-        </button>
+    <MainLayout>
+      
+      <div className="landing-content">
+        <h1>Welcome to DevBank ATM Machine</h1>
+        <div className={`slide-button-container ${isSliding ? 'sliding' : ''}`}>
+          <p>Slide to Enter</p>
+          <div className="slide-button-border">
+            <button
+              onMouseDown={handleSlideStart}
+              onMouseUp={handleSlideEnd}
+              onTouchStart={handleSlideStart}
+              onTouchEnd={handleSlideEnd}
+              className={`slide-button ${isSliding ? 'slide-complete' : ''}`}
+            >
+            Slide
+          </button>
+          </div>
+        
+        </div>
+        {isSliding && (
+          <p className="redirect-message">Release to enter PIN page...</p>
+        )}
       </div>
-      {isSliding && (
-        <p className="redirect-message">Release to enter PIN page...</p>
-      )}
-    </div>
+      
+    </MainLayout>
   );
 }

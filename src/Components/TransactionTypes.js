@@ -1,24 +1,28 @@
 import { Link } from 'react-router-dom';
+import MainLayout from '../MainLayout';
+import '../StyleSheet/transactiontypes.css'
 
 const TransactionTypes = () => {
   return (
-    <div className="transaction-types">
-      <h1>Transaction Types</h1>
-      <ul>
-        <li>
-          <Link to="/deposits">Deposits</Link>
-        </li>
-        <li>
-          <Link to="/user/transaction-types/cash-withdrawals">Cash Withdrawals</Link>
-        </li>
-        <li>
-          <Link to="/bill-payments">Bill Payments</Link>
-        </li>
-        <li>
-          <Link to="/transfers">Transfers Between Accounts</Link>
-        </li>
-      </ul>
-    </div>
+    <MainLayout>
+        <div className="transaction-types">
+          <h1 style={{fontSize:'4rem'}}>Transaction Types</h1>
+          <ul className='type-list'>
+            <li>
+              <Link className='type-items' to="/balance">Check Balance</Link>
+            </li>
+            <li>
+              <Link className='type-items' to="/user/transaction-types/cash-withdrawals">Cash Withdrawals</Link>
+            </li>
+            <li>
+              <Link className='type-items' to="/bill-payments">Deposit</Link>
+            </li>
+            <li>
+              <Link className='type-items' to="/transfers">Change PIN</Link>
+            </li>
+          </ul>
+        </div>
+    </MainLayout>
   );
 };
 

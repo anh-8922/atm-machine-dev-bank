@@ -1,0 +1,16 @@
+.authentication-page {
+    
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: black;
+}
+
+.pin-button{
+    background-color: var(--orange);
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+}
