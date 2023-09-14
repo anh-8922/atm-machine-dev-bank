@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import noteData from '../Data/NoteData'; // Import noteData from your file
 import '../StyleSheet/cash-withdraw.css';
 import MainLayout from '../MainLayout';
+import SignOut from './SignOut';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -81,9 +82,11 @@ const ATMApp = () => {
 
   return (
     <MainLayout>
+      <div style={{backgroundColor:'whitesmoke', padding:'1rem', textAlign:'center', height:'100vh'}}>
+      <h1 style={{color: 'black', fontSize:'3rem'}}>Get Cash Now</h1>
       <div className='cash-withdrawal-box'>
         <div className='balance'>
-          <h1>Get Cash Now</h1>
+          
           <p>YourCurrent Balance: £{balance}</p>
           <p>Your Overdraft Allowance: £{overdraftAllowance}</p>
         </div>
@@ -115,13 +118,14 @@ const ATMApp = () => {
           <div className="confirmation-modal">
             <p>Dispensed Amount: £{dispensedAmount}</p>
             <p>Total Notes Dispensed: {notesDispensed.length}</p>
-            <p>Do you want to process?</p>
-            <button onClick={handleConfirmationYes}>Yes</button>
-            <button onClick={handleConfirmationNo}>No</button>
+            <p style={{fontWeight:'bold'}}>Do you want to process?</p>
+            <button className='confirmation-options' onClick={handleConfirmationYes}>Yes</button>
+            <button className='confirmation-options' onClick={handleConfirmationNo}>No</button>
           </div>
         )}
       </div>
-      
+      <SignOut/>
+      </div>
     </MainLayout>
   );
 };

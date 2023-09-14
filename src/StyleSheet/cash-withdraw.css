@@ -1,13 +1,21 @@
 .cash-withdrawal-box {
     background-color: whitesmoke;
     color: black;
-    height: 100vh;
+    height: max-content;
     display: flex;
     flex-direction: column; 
     align-items: center;
     align-content: center;
- 
+    border: 1px dotted grey;
     gap: 2rem;
+    width: fit-content;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 32%;
+    z-index: 10;
+
    
 }
 
@@ -29,4 +37,11 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+}
+
+.confirmation-options {
+    width: 6rem;
+    padding: 0.5rem ;
+    border-radius: 0.5rem;
+    margin: 1rem
 }

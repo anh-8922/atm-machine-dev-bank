@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import MainLayout from '../MainLayout';
+import SignOut from './SignOut';
 import '../StyleSheet/transactiontypes.css'
 
 const TransactionTypes = () => {
@@ -22,6 +23,7 @@ const TransactionTypes = () => {
             </li>
           </ul>
         </div>
+        <SignOut/>
     </MainLayout>
   );
 };

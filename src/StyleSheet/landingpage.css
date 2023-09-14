@@ -14,7 +14,7 @@
     background-color: var(--main-blue);
     height: 100vh;
     color: whitesmoke;
-    
+
  ;
 }
 .heading {
@@ -74,4 +74,23 @@
     text-align: center;
     margin-top: 20px;
   }
+.sign-out {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+.sign-options {
+  width: 6rem;
+  padding: 0.7rem 0;
+  background-color: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
   
