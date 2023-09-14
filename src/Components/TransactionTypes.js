@@ -21,12 +21,12 @@ const TransactionTypes = () => {
         <h1 style={{ fontSize: '4rem' }}>Transaction Types</h1>
         <ul className="type-list">
           <li>
-            <Link className="type-items" onClick={handlePinChangeClick}>Check Balance</Link>
-          </li>
-          <li>
             <Link className="type-items" to="/user/transaction-types/cash-withdrawals">
               Cash Withdrawals
             </Link>
+          </li>
+          <li>
+            <Link className="type-items" onClick={handlePinChangeClick}>Transfer</Link>
           </li>
           <li>
             <Link className="type-items" onClick={handlePinChangeClick}>
@@ -41,7 +41,7 @@ const TransactionTypes = () => {
         </ul>
       </div>
       {showPopup && (
-        <div className="popup" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'white', padding: '20px', border: '1px solid #ccc', color:'black' }}>
+        <div className="popup" style={{  }}>
           <p>The service is not available</p>
           <button onClick={handlePopupClose}>Close</button>
         </div>

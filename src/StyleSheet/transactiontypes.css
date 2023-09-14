@@ -31,3 +31,18 @@
     color: black;
     font-size: 2rem;
 }
+
+.popup {
+    position: absolute;
+    width: 20rem;
+    text-align: center;
+    line-height: 2;
+    top: 50%;
+    left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: white;
+     padding: 1rem;
+     border: 1px solid grey;
+     color:black;
+     border-radius: 0.5rem;
+}
