@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import noteData from '../Data/NoteData'; // Import noteData from your file
 import '../StyleSheet/cash-withdraw.css';
 import MainLayout from '../MainLayout';
-import SignOut from './SignOut';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import {TiArrowBackOutline} from 'react-icons/ti';
+import {VscSignOut} from 'react-icons/vsc';
 
 const ATMApp = () => {
   const initialBalance = 220;
@@ -13,6 +12,7 @@ const ATMApp = () => {
   const [balance, setBalance] = useState(initialBalance);
   const [withdrawalAmount, setWithdrawalAmount] = useState(0);
   const [dispensedAmount, setDispensedAmount] = useState(0);
+  const [totalNotesDispensed, setTotalNotesDispensed] = useState(0); // New state for total notes dispensed
   const [notesDispensed, setNotesDispensed] = useState([]);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [updatedNotesData, setUpdatedNotesData] = useState(noteData);
@@ -29,6 +29,7 @@ const ATMApp = () => {
 
       // Create a copy of the notes data to update
       const updatedNotes = [...updatedNotesData];
+      let totalDispensedNotes = 0; // Initialize total dispensed notes
 
       // Iterate through available notes and dispense them
       for (const [index, note] of updatedNotes.entries()) {
@@ -45,14 +46,16 @@ const ATMApp = () => {
           remainingAmountToDispense -= notesToDispense * noteValue;
           availableNotes -= notesToDispense;
           updatedNotes[index] = { ...note, count: availableNotes };
+          totalDispensedNotes += notesToDispense; // Update total dispensed notes
         }
 
         if (remainingAmountToDispense === 0) break;
       }
 
-      // Update state with dispensed amount and notes
+      // Update state with dispensed amount, notes, and total dispensed notes
       setDispensedAmount(withdrawalAmount - remainingAmountToDispense);
       setNotesDispensed(dispensedNotes);
+      setTotalNotesDispensed(totalDispensedNotes);
       setUpdatedNotesData(updatedNotes);
 
       // Show the withdrawal confirmation modal
@@ -72,7 +75,7 @@ const ATMApp = () => {
 
     // Reset confirmation modal
     setShowConfirmationModal(false);
-    alert('thank you')
+    alert('Thank you');
   };
 
   const handleConfirmationNo = () => {
@@ -80,51 +83,63 @@ const ATMApp = () => {
     alert('Thank you for using the service.');
   };
 
+  const navigate = useNavigate();
+
+    const handleCancelClick = () => {
+    // Use the navigate function to navigate to the home page
+    navigate('/');
+  };
+    const handleBackClick = () => {
+        navigate('/user/transaction-types')
+    }
+
   return (
     <MainLayout>
-      <div style={{backgroundColor:'whitesmoke', padding:'1rem', textAlign:'center', height:'100vh'}}>
-      <h1 style={{color: 'black', fontSize:'3rem'}}>Get Cash Now</h1>
-      <div className='cash-withdrawal-box'>
-        <div className='balance'>
-          
-          <p>YourCurrent Balance: £{balance}</p>
-          <p>Your Overdraft Allowance: £{overdraftAllowance}</p>
-        </div>
-        <div>
-          <h2>Available Notes</h2>
-          <ul>
-            {updatedNotesData.map((note) => (
-              <li key={note.value}>
-                £{note.value} notes: {note.count} available
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className='withdraw-input'>
-          <h2>How much do you want to withdraw?</h2>
-          <label>
-            Enter Amount: £
-            <input
-              type="number"
-              value={withdrawalAmount}
-              onChange={(e) => setWithdrawalAmount(Number(e.target.value))}
-            />
-          </label>
-          <button onClick={handleWithdrawal}>Submit</button>
-        </div>
-
-        {showConfirmationModal && (
-          <div className="confirmation-modal">
-            <p>Dispensed Amount: £{dispensedAmount}</p>
-            <p>Total Notes Dispensed: {notesDispensed.length}</p>
-            <p style={{fontWeight:'bold'}}>Do you want to process?</p>
-            <button className='confirmation-options' onClick={handleConfirmationYes}>Yes</button>
-            <button className='confirmation-options' onClick={handleConfirmationNo}>No</button>
+      <div style={{ backgroundColor:'whitesmoke' , textAlign: 'center', height: '130vh'}}>
+        <h1 className='withdrawal-title'>Get Cash Now</h1>
+        <div className='cash-withdrawal-box'>
+          <div className='balance'>
+            <p>Your Current Balance: £{balance}</p>
+            <p>Your Overdraft Allowance: £{overdraftAllowance}</p>
           </div>
-        )}
-      </div>
-      <SignOut/>
+          <div>
+            <h2 style={{fontSize:'1.5rem'}}>Available Notes</h2>
+            <ul className='available-notes'>
+              {updatedNotesData.map((note) => (
+                <li key={note.value}>
+                   {/* Add the image */}
+                  <span>£{note.value}</span> notes: <span>{note.count}</span> available
+                </li>
+              ))}
+            </ul>
+
+          </div>
+
+          <div className='withdraw-input'>
+            <h2 style={{fontSize:'1.5rem'}}>How much do you want to withdraw?</h2>
+            <label>
+              <span style={{paddingRight:'1rem'}}>Enter Amount: £</span>
+              <input style={{fontSize:'1.5rem'}}
+                type="number"
+                value={withdrawalAmount}
+                onChange={(e) => setWithdrawalAmount(Number(e.target.value))}
+              />
+            </label>
+            <button className='submit-button' onClick={handleWithdrawal}>Submit</button>
+          </div>
+
+          {showConfirmationModal && (
+            <div className="confirmation-modal">
+              <p>Dispensed Amount: £{dispensedAmount}</p>
+              <p>Total Notes Dispensed: {totalNotesDispensed}</p>
+              <p style={{ fontWeight: 'bold' }}>Do you want to process?</p>
+              <button className='confirmation-options' onClick={handleConfirmationYes}>Yes</button>
+              <button className='confirmation-options' onClick={handleConfirmationNo}>No</button>
+            </div>
+          )}
+        </div>
+        <button className="cancel-option" style={{left: '0'}} onClick={handleBackClick}><TiArrowBackOutline/>Back</button> 
+        <button className="cancel-option" style={{right: '0'}} onClick={handleCancelClick}>Cancel<VscSignOut/></button>
       </div>
     </MainLayout>
   );

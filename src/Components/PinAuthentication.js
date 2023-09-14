@@ -49,7 +49,7 @@ const ATMApp = () => {
   return (
     <MainLayout>
       <div className='authentication-page'>
-        <p>Enter Your PIN:</p>
+        <p style={{fontSize:'2rem', fontWeight:'500'}}>Enter Your PIN:</p>
         <PinInput
           ref={pinInputRef}
           length={4}
@@ -60,7 +60,7 @@ const ATMApp = () => {
           onChange={handlePinChange}
         />
         
-        <button className='pin-button' onClick={handlePinSubmit}>Submit</button> {/* Add the submit button */}
+        <button className='pin-button' onClick={handlePinSubmit}>Enter</button> {/* Add the submit button */}
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       </div>
     </MainLayout>

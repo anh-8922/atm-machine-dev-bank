@@ -6,6 +6,9 @@
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 1.2rem;
 }
+body{
+  background-color: whitesmoke;
+}
 :root{
   --main-blue: #134677;
   --orange: #FE7F02;
@@ -28,9 +31,13 @@
 .landing-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  position: absolute;
+  margin: 0 auto;
+  top: 25%;
+  left: 0;
+  right: 0;
   align-items: center;
-  height: 90vh;
+  height: max-content;
   background-color: var(--main-blue);
 }
   
@@ -38,13 +45,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 1rem;
     align-items: center;
-    border: 1px solid grey;
+    
     padding: 5rem;
   }
   .slide-button-border {
     border: 2px solid grey;
     width: 200px;
+    border-radius: 0.5rem;
   }
   .slide-button {
     width: 100px;
@@ -74,23 +83,5 @@
     text-align: center;
     margin-top: 20px;
   }
-.sign-out {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem 3rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 
-}
-.sign-options {
-  width: 6rem;
-  padding: 0.7rem 0;
-  background-color: var(--orange);
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
   

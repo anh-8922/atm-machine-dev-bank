@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import '../StyleSheet/landingpage.css';
+import '../StyleSheet/stylesheet.css';
 import MainLayout from "../MainLayout";
 
 export default function Landing() {
@@ -23,9 +23,8 @@ export default function Landing() {
 
   return (
     <MainLayout>
-      
       <div className="landing-content">
-        <h1>Welcome to DevBank ATM Machine</h1>
+        <h1 style={{fontSize:'3rem'}}>Welcome to DevBank ATM Machine</h1>
         <div className={`slide-button-container ${isSliding ? 'sliding' : ''}`}>
           <p>Slide to Enter</p>
           <div className="slide-button-border">

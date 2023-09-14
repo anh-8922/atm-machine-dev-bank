@@ -9,18 +9,30 @@
     border: 1px dotted grey;
     gap: 2rem;
     width: fit-content;
-    margin: 1rem auto;
-    padding: 1rem 2rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    
+    top: 22%;
     border-radius: 0.5rem;
     position: absolute;
-    left: 32%;
     z-index: 10;
-
+    
    
 }
 
+.withdrawal-title {
+   background-color: var(--main-blue);
+    font-size: 2.5rem;
+    padding-bottom: 15rem;
+}
+
 .balance {
-    
+    background-color: var(--orange);
+    width: 100%;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    padding: 1rem;
 }
 
 .balance > h1 {
@@ -28,9 +40,22 @@
     text-align: center;
     margin-bottom: 1rem;
 }
+.cash-image {
+    width: 5rem;
+}
+.available-notes {
+    display: grid;
+    text-align: left;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 1.5rem;
+    list-style-type: none; 
+    padding: 1rem 2rem;
+}
 
-.Withdrawal-label {
-    padding: 2rem 0;
+.available-notes span {
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 .withdraw-input {
     display: flex;
@@ -38,10 +63,75 @@
     align-items: center;
     gap: 1rem;
 }
-
+.submit-button {
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    will-change: box-shadow,transform;
+    background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% );
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    :hover {
+        box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #3c4fe0;
+        transform: translateY(-2px);
+    }
+    :active{
+        box-shadow: inset 0px 3px 7px #3c4fe0;
+        transform: translateY(2px);
+    }
+    
+}
 .confirmation-options {
     width: 6rem;
     padding: 0.5rem ;
     border-radius: 0.5rem;
-    margin: 1rem
+    margin: 1rem;
+    border: 1px solid grey;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #3a4149;
+    background: #e7ebee;
+    line-height: 1.15;
+
 }
+
+.confirmation-options:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #5468FF;
+}
+
+.sign-out {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+   
+    padding: 1rem 3rem;
+    
+   
+    width: 100%;
+  
+  }
+
+
+  .cancel-option {
+    width: 6rem;
+    height: 6rem;
+    border: 1px dotted grey;
+    background-color: whitesmoke;
+    color: var(--main-blue);
+    border-radius: 50%;
+    position: fixed;
+    cursor: pointer;
+    margin: 1rem;
+    bottom: 0
+  }
+
