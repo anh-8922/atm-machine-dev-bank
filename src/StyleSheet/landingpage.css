@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.2rem;
 }
 :root{
   --main-blue: #134677;
@@ -13,6 +14,8 @@
     background-color: var(--main-blue);
     height: 100vh;
     color: whitesmoke;
+    
+ ;
 }
 .heading {
   display: flex;

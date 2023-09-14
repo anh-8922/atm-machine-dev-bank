@@ -5,10 +5,28 @@
     display: flex;
     flex-direction: column; 
     align-items: center;
-    padding: 5rem 0;
+    align-content: center;
+ 
+    gap: 2rem;
+   
+}
+
+.balance {
     
+}
+
+.balance > h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .Withdrawal-label {
     padding: 2rem 0;
+}
+.withdraw-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
