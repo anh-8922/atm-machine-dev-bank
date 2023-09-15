@@ -85,6 +85,28 @@
     }
     
 }
+
+.confirmation-modal {
+    position: fixed;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.773);
+    left: 0;
+  top: 0;
+ 
+    width: 100%;
+    
+}
+
+.modal-content {
+    position: relative;
+    top: 30%;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
 .confirmation-options {
     width: 6rem;
     padding: 0.5rem ;
