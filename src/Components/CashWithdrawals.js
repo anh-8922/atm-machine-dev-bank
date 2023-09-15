@@ -76,7 +76,7 @@ const ATMApp = () => {
 
     // Reset confirmation modal
     setShowConfirmationModal(false);
-    alert('Thank you');
+    alert('Please take you cash. Do you want to carry on?');
   };
 
   const handleConfirmationNo = () => {
