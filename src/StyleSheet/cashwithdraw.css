@@ -121,7 +121,7 @@
 
 
   .cancel-option {
-    background-color: whitesmoke;
+    background: none;
     color: var(--main-blue);
     border-radius: 50%;
     position: fixed;
