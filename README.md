@@ -32,7 +32,7 @@ The DevBank ATM Machine App is deployed in Vercel and can be accessed at the fol
 
 - **Challenge**: The project was undertaken as part of a challenge to build an ATM web app with specific functionality, including PIN verification, balance display, withdrawals, notes dispensing, and overdraft protection.
 
-- **Time Taken**: The project was completed in approximately 15 hours.
+- **Time Taken**: The project was completed in approximately 10-15 hours (well, it's including the time I was sitting in front of the screen just to figure out the logic, or sometimes I just stared at the color schemes and tried to design the mockup 😅. ).
 
 ## Technologies Used
 
