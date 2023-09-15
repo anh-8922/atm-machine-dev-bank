@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import noteData from '../Data/NoteData'; // Import noteData from your file
-import '../StyleSheet/cash-withdraw.css';
+import noteData from '../Data/NoteData'; // Import noteData 
+import '../StyleSheet/cashwithdraw.css';
 import MainLayout from '../MainLayout';
 import {TiArrowBackOutline} from 'react-icons/ti';
 import {VscSignOut} from 'react-icons/vsc';
@@ -65,6 +65,7 @@ const ATMApp = () => {
     }
   };
 
+  //Handle yes/no confirmation options
   const handleConfirmationYes = () => {
     // Update balance
     const newBalance = balance - withdrawalAmount;
@@ -82,7 +83,7 @@ const ATMApp = () => {
     setShowConfirmationModal(false);
     alert('Thank you for using the service.');
   };
-
+  //Handle back/cancel buttons
   const navigate = useNavigate();
 
     const handleCancelClick = () => {
@@ -95,7 +96,7 @@ const ATMApp = () => {
 
   return (
     <MainLayout>
-      <div style={{ backgroundColor:'whitesmoke' , textAlign: 'center', height: '110vh'}}>
+      <div style={{ backgroundColor:'whitesmoke' , textAlign: 'center', height: '110vh', width:'100%'}}>
         <h1 className='withdrawal-title'>Withdrawal Request</h1>
         <div className='cash-withdrawal-box'>
           <div className='balance'>
@@ -107,7 +108,6 @@ const ATMApp = () => {
             <ul className='available-notes'>
               {updatedNotesData.map((note) => (
                 <li key={note.value}>
-                   {/* Add the image */}
                   <span>£{note.value}</span> notes: <span>{note.count}</span> available
                 </li>
               ))}
