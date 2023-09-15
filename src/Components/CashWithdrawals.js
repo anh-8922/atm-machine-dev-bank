@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import noteData from '../Data/NoteData'; // Import noteData 
 import '../StyleSheet/cashwithdraw.css';
 import MainLayout from '../MainLayout';
-import {TiArrowBackOutline} from 'react-icons/ti';
-import {VscSignOut} from 'react-icons/vsc';
+import { TiArrowBackOutline } from 'react-icons/ti';
+import { VscSignOut } from 'react-icons/vsc';
 
 const ATMApp = () => {
   const initialBalance = 220;
@@ -13,6 +13,7 @@ const ATMApp = () => {
   const [withdrawalAmount, setWithdrawalAmount] = useState(0);
   const [dispensedAmount, setDispensedAmount] = useState(0);
   const [totalNotesDispensed, setTotalNotesDispensed] = useState(0); // New state for total notes dispensed
+  const [overdraftAmount, setOverdraftAmount] = useState(0); // New state for overdraft amount
   const [notesDispensed, setNotesDispensed] = useState([]);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [updatedNotesData, setUpdatedNotesData] = useState(noteData);
@@ -20,6 +21,14 @@ const ATMApp = () => {
   const handleWithdrawal = () => {
     // Calculate the remaining balance after withdrawal
     const remainingBalance = balance - withdrawalAmount;
+
+    if (remainingBalance >= 0) {
+      // Withdrawal within the balance, no overdraft
+      setOverdraftAmount(0);
+    } else {
+      // Calculate the overdraft amount
+      setOverdraftAmount(-remainingBalance);
+    }
 
     // Check if the withdrawal is within overdraft allowance
     if (remainingBalance >= -overdraftAllowance) {
@@ -65,7 +74,7 @@ const ATMApp = () => {
     }
   };
 
-  //Handle yes/no confirmation options
+  // Handle yes/no confirmation options
   const handleConfirmationYes = () => {
     // Update balance
     const newBalance = balance - withdrawalAmount;
@@ -74,37 +83,46 @@ const ATMApp = () => {
     // Reset withdrawal input
     setWithdrawalAmount(0);
 
+    // Reset overdraft amount
+    setOverdraftAmount(0);
+
     // Reset confirmation modal
     setShowConfirmationModal(false);
-    alert('Please take you cash. Do you want to carry on?');
+    alert('Please take your cash. Do you want to carry on?');
   };
 
   const handleConfirmationNo = () => {
+    // Reset overdraft amount
+    setOverdraftAmount(0);
+
     setShowConfirmationModal(false);
     alert('Thank you for using the service.');
   };
-  //Handle back/cancel buttons
+
+  // Handle back/cancel buttons
   const navigate = useNavigate();
 
-    const handleCancelClick = () => {
+  const handleCancelClick = () => {
     // Use the navigate function to navigate to the home page
     navigate('/');
   };
-    const handleBackClick = () => {
-        navigate('/user/transaction-types')
-    }
+  
+  const handleBackClick = () => {
+    navigate('/user/transaction-types');
+  };
 
   return (
     <MainLayout>
-      <div style={{ backgroundColor:'whitesmoke' , textAlign: 'center', height: '110vh', width:'100%'}}>
+      <div style={{ backgroundColor: 'whitesmoke', textAlign: 'center', height: '110vh', width: '100%' }}>
         <h1 className='withdrawal-title'>Withdrawal Request</h1>
         <div className='cash-withdrawal-box'>
           <div className='balance'>
             <p>Your Current Balance: £{balance}</p>
             <p>Monthly Overdraft Allowance: £{overdraftAllowance}</p>
+            {overdraftAmount > 0 && <p>Overdraft Amount: £{overdraftAmount}</p>}
           </div>
           <div>
-            <h2 style={{fontSize:'1.3rem'}}>Available Notes</h2>
+            <h2 style={{ fontSize: '1.3rem' }}>Available Notes</h2>
             <ul className='available-notes'>
               {updatedNotesData.map((note) => (
                 <li key={note.value}>
@@ -112,14 +130,13 @@ const ATMApp = () => {
                 </li>
               ))}
             </ul>
-
           </div>
 
           <div className='withdraw-input'>
-            <h2 style={{fontSize:'1.3rem'}}>How much cash would you like to access?</h2>
+            <h2 style={{ fontSize: '1.3rem' }}>How much cash would you like to access?</h2>
             <label>
-              <span style={{paddingRight:'1rem'}}>Enter Amount: £</span>
-              <input style={{fontSize:'1.5rem'}}
+              <span style={{ paddingRight: '1rem' }}>Enter Amount: £</span>
+              <input style={{ fontSize: '1.5rem' }}
                 type="number"
                 value={withdrawalAmount}
                 onChange={(e) => setWithdrawalAmount(Number(e.target.value))}
@@ -131,6 +148,7 @@ const ATMApp = () => {
           {showConfirmationModal && (
             <div className="confirmation-modal">
               <p>Dispensed Amount: £{dispensedAmount}</p>
+              {overdraftAmount > 0 && <p>Overdraft Amount: £{overdraftAmount}</p>}
               <p>Total Notes Dispensed: {totalNotesDispensed}</p>
               <p style={{ fontWeight: 'bold' }}>Do you want to process?</p>
               <button className='confirmation-options' onClick={handleConfirmationYes}>Yes</button>
@@ -138,8 +156,8 @@ const ATMApp = () => {
             </div>
           )}
         </div>
-        <div className="cancel-option" style={{left: '0'}} onClick={handleBackClick}><TiArrowBackOutline/>Back</div> 
-        <div className="cancel-option" style={{right: '0'}} onClick={handleCancelClick}>Cancel<VscSignOut/></div>
+        <div className="cancel-option" style={{ left: '0' }} onClick={handleBackClick}><TiArrowBackOutline />Back</div>
+        <div className="cancel-option" style={{ right: '0' }} onClick={handleCancelClick}>Cancel<VscSignOut /></div>
       </div>
     </MainLayout>
   );
