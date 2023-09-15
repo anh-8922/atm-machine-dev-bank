@@ -5,6 +5,7 @@ import '../StyleSheet/cashwithdraw.css';
 import MainLayout from '../MainLayout';
 import { TiArrowBackOutline } from 'react-icons/ti';
 import { VscSignOut } from 'react-icons/vsc';
+import polygon from '../Assets/polygon.jpg';
 
 const ATMApp = () => {
   const initialBalance = 220;
@@ -113,7 +114,10 @@ const ATMApp = () => {
 
   return (
     <MainLayout>
-      <div style={{ backgroundColor: 'whitesmoke', textAlign: 'center', height: '110vh', width: '100%' }}>
+      <div style={{ 
+        backgroundImage: `url("${polygon}")`,backgroundSize:'cover', 
+        textAlign: 'center', height: '110vh', width: '100%' 
+      }}>
         <h1 className='withdrawal-title'>Withdrawal Request</h1>
         <div className='cash-withdrawal-box'>
           <div className='balance'>
