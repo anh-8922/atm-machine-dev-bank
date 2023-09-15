@@ -26,9 +26,8 @@ export default function Landing() {
     <MainLayout>
       <div className="landing-content">
         <h1 style={{fontSize:'3rem'}}>Welcome to DevBank ATM Machine</h1>
-        <div style={{ backgroundImage:`url("${card}")`,
-                        width:'13rem', height:'10rem',
-                        backgroundSize:'cover', }}></div>
+        <div style={{ backgroundImage:`url("${card}")`, width:'13rem', height:'10rem',
+                      backgroundSize:'cover', margin:'1rem 0' }}></div>
         <div className={`slide-button-container ${isSliding ? 'sliding' : ''}`}>
           <p style={{fontSize:'1.5rem'}}>Slide to Enter</p>
           <div className="slide-button-border">
