@@ -7,7 +7,7 @@ import { TiArrowBackOutline } from 'react-icons/ti';
 import { VscSignOut } from 'react-icons/vsc';
 import polygon from '../Assets/polygon.jpg';
 
-const ATMApp = () => {
+export default function CashWithdraw() {
   const initialBalance = 220;
   const overdraftAllowance = 100;
   const [balance, setBalance] = useState(initialBalance);
@@ -167,4 +167,4 @@ const ATMApp = () => {
   );
 };
 
-export default ATMApp;
+

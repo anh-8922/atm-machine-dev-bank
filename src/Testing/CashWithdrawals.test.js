@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-import ATMApp from "../Components/CashWithdrawals"; 
+import CashWithdraw from "../Components/CashWithdrawals";
 
 // Mock noteData
 const mockNoteData = [
@@ -13,7 +13,7 @@ const mockNoteData = [
 
 jest.mock("../Data/NoteData", () => mockNoteData);
 
-describe("ATMApp Component", () => {
+describe("CashWithdraw Component", () => {
   it("displays the initial balance and overdraft allowance", () => {
     render(<ATMApp />);
     expect(screen.getByText("Your Current Balance: £220")).toBeInTheDocument();
