@@ -7,8 +7,9 @@
   font-size: 1.15rem;
 }
 body{
-  background-color: whitesmoke;
- 
+  background-color: var(--main-blue);
+  height: 100vh;
+  
 }
 :root{
   --main-blue: #134677;
@@ -16,9 +17,7 @@ body{
 }
 .layout-body {
     background-color: var(--main-blue);
-    height: 100vh;
-    color: whitesmoke;
-
+    color: var(--main-blue);
  ;
 }
 .heading {
@@ -32,14 +31,17 @@ body{
 .landing-content {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  margin: 0 auto;
-  top: 22%;
-  left: 0;
-  right: 0;
+  justify-content: center;
   align-items: center;
-  height: max-content;
   background-color: var(--main-blue);
+  height: max-content;
+  margin: 5rem 1rem;
+  
+}
+
+.welcome {
+  font-size: 3rem;
+  text-align: center;
 }
   
   .slide-button-container {
@@ -99,4 +101,29 @@ body{
    border-radius: 0.5rem;
 }
 
+@media only screen and (max-width: 900px) {
+  
+  .welcome {
+    font-size: 2rem;
+  }
+
+  .question {
+    
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  *{
+    font-size: 1rem;
+  }
+  .welcome {
+    font-size: 1.8rem;
+  }
+  .heading {
+    padding: 0.7rem 2rem;
+  }
+  .question {
+    width: 17rem
+  }
+}
   

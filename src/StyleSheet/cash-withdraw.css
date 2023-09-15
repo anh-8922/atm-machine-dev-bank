@@ -129,3 +129,34 @@
     bottom: 0
   }
 
+
+@media only screen and (max-width: 900px) {
+    .withdrawal-title{
+        font-size: 2rem;
+    }
+
+   
+}
+
+@media only screen and (max-width: 600px) {
+    .cash-withdrawal-box {
+        top: 20%;
+    }
+        .withdrawal-title{
+            font-size: 1.5rem;
+        }
+
+        .available-notes {
+            display: grid;
+            text-align: left;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            grid-template-rows: repeat(2, 1fr); 
+            gap: 0.5rem;
+            list-style-type: none; 
+            padding: 0.5rem 1rem;
+        }
+
+        .available-notes span {
+            font-size: 1.2rem;
+        }
+}

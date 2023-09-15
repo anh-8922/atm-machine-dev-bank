@@ -95,7 +95,7 @@ const ATMApp = () => {
 
   return (
     <MainLayout>
-      <div style={{ backgroundColor:'whitesmoke' , textAlign: 'center', height: '110vh'}}>
+      <div style={{ backgroundColor:'whitesmoke' , textAlign: 'center', height: '110vh', width:'100%'}}>
         <h1 className='withdrawal-title'>Withdrawal Request</h1>
         <div className='cash-withdrawal-box'>
           <div className='balance'>

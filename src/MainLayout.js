@@ -28,7 +28,7 @@ export default function MainLayout({children}) {
                     </div>
                 )}
             </div>
-            <div>{children}</div>
+            <div style={{height:'100vh'}}>{children}</div>
         </div>
     )
 }

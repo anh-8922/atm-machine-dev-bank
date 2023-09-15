@@ -18,7 +18,7 @@ const TransactionTypes = () => {
   return (
     <MainLayout>
       <div className="transaction-types">
-        <h1 style={{ fontSize: '3rem' }}>Transaction Types</h1>
+        <h1 className='type-title'>Transaction Types</h1>
         <ul className="type-list">
           <li>
             <Link className="type-items" to="/user/transaction-types/cash-withdrawals">
