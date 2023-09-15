@@ -7,7 +7,6 @@ import MainLayout from '../MainLayout';
 export default function PinAuthentication() {
   const [pin, setPin] = useState('');
   const [balance, setBalance] = useState(null);
-  const [overdraft, setOverdraft] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const pinInputRef = useRef(null);
   const navigate = useNavigate(); // Get the navigate function from React Router
