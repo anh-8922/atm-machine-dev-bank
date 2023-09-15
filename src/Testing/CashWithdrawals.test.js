@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-import ATMApp from "../Components/ATMApp"; // Adjust the import to your file structure
+import ATMApp from "../Components/CashWithdrawals"; // Adjust the import to your file structure
 
 // Mock noteData
 const mockNoteData = [
