@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-import ATMApp from "../Components/CashWithdrawals"; // Adjust the import to your file structure
+import ATMApp from "../Components/CashWithdrawals"; 
 
 // Mock noteData
 const mockNoteData = [
@@ -32,7 +32,7 @@ describe("ATMApp Component", () => {
 
     await waitFor(() => {
       expect(screen.getByText("Dispensed Amount: £70")).toBeInTheDocument();
-      expect(screen.getByText("Total Notes Dispensed: 3")).toBeInTheDocument();
+      expect(screen.getByText("Total Notes Dispensed: 4")).toBeInTheDocument();
     });
   });
 

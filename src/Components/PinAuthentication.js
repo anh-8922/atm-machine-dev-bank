@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from React Router
+import { useNavigate } from 'react-router-dom'; 
 import PinInput from 'react-pin-input';
 import '../StyleSheet/pinauthentication.css';
 import MainLayout from '../MainLayout';
 
-const ATMApp = () => {
+export default function PinAuthentication() {
   const [pin, setPin] = useState('');
   const [balance, setBalance] = useState(null);
   const [overdraft, setOverdraft] = useState(false);
@@ -67,4 +67,3 @@ const ATMApp = () => {
   );
 };
 
-export default ATMApp;

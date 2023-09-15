@@ -5,6 +5,7 @@
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 1.15rem;
+ 
 }
 body{
   background-color: var(--main-blue);
@@ -42,6 +43,7 @@ body{
 .welcome {
   font-size: 3rem;
   text-align: center;
+  color: whitesmoke;
 }
   
   .slide-button-container {
@@ -84,6 +86,7 @@ body{
   .redirect-message {
     text-align: center;
     margin-top: 20px;
+    color: whitesmoke;
   }
 
 .question {
@@ -99,6 +102,7 @@ body{
    border: 1px solid grey;
    color:black;
    border-radius: 0.5rem;
+   z-index: 11;
 }
 
 @media only screen and (max-width: 900px) {

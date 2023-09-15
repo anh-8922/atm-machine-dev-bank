@@ -20,6 +20,7 @@
 
 .withdrawal-title {
    background-color: var(--main-blue);
+   color: whitesmoke;
     font-size: 3rem;
     padding-bottom: 15rem;
 }
@@ -144,6 +145,7 @@
     }
         .withdrawal-title{
             font-size: 1.5rem;
+            
         }
 
         .available-notes {
@@ -158,5 +160,8 @@
 
         .available-notes span {
             font-size: 1.2rem;
+        }
+        .withdraw-input {
+            padding: 0 0.5rem;
         }
 }

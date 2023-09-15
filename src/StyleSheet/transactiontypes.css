@@ -6,7 +6,8 @@
  gap: 5rem
 }
 .type-title {
-    font-size: 3rem
+    font-size: 3rem;
+    color: whitesmoke;
 }
 .type-list{
     display: flex;

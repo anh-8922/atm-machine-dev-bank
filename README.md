@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# DevBank ATM Machine App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The **DevBank ATM Machine App** is a web application built using React.js, designed to simulate an ATM machine experience. This application allows users to enter their PIN, check their account balance, and make withdrawals. The project was undertaken as part of a coding challenge and is a great example of using React.js to create a functional and interactive web application.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **PIN Verification**: Users are required to enter their PIN (1111), which is checked against a PIN API to authenticate the user.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Account Balance Display**: Upon successful authentication, the user's current account balance is retrieved from the API and displayed on the screen.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Withdrawals**: Users can make up to three withdrawals, each for a specific amount.
 
-### `npm test`
+- **Notes Dispensing**: The ATM machine dispenses the appropriate mix of notes (e.g., £5, £10, £20) based on the withdrawal amount and the available notes in the machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Overdraft Protection**: The ATM allows an overdraft of up to £100 and notifies users if they go overdrawn.
 
-### `npm run build`
+- **Testing**: Comprehensive unit tests using Jest have been written to ensure the reliability and correctness of the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Details
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Project Name**: DevBank ATM Machine App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Description**: A React.js web application that simulates an ATM machine, allowing users to check their account balance and make withdrawals.
 
-### `npm run eject`
+- **Challenge**: The project was undertaken as part of a challenge to build an ATM web app with specific functionality, including PIN verification, balance display, withdrawals, notes dispensing, and overdraft protection.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Time Taken**: The project was completed in approximately 15 hours.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **React.js**: The application is built using the React.js library, enabling the creation of a dynamic and responsive user interface.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Jest**: Unit tests have been written using Jest to ensure the reliability and correctness of the application's functions and components.
 
-## Learn More
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run the DevBank ATM Machine App locally, follow these steps:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repository to your local machine:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```shell
+   git clone <repository-url>

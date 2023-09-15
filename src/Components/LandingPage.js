@@ -18,7 +18,7 @@ export default function Landing() {
       // Use navigate to navigate to the 'enter-pin' route
       setTimeout(() => {
         navigate('/enter-pin');
-      }, 500); // Redirect after a 1-second delay
+      }, 500); // Redirect after a  0.5 second delay
     }
   };
 
@@ -29,7 +29,7 @@ export default function Landing() {
         <div style={{ backgroundImage:`url("${card}")`, width:'13rem', height:'10rem',
                       backgroundSize:'cover', margin:'1rem 0' }}></div>
         <div className={`slide-button-container ${isSliding ? 'sliding' : ''}`}>
-          <p style={{fontSize:'1.5rem'}}>Slide to Enter</p>
+          <p style={{fontSize:'1.5rem', color:'whitesmoke'}}>Slide to Enter</p>
           <div className="slide-button-border">
             <button
               onMouseDown={handleSlideStart}
