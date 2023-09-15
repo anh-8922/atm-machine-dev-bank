@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import '../StyleSheet/stylesheet.css';
 import MainLayout from "../MainLayout";
+import card from '../Assets/card.png';
 
 export default function Landing() {
     const navigate = useNavigate();
@@ -25,8 +26,11 @@ export default function Landing() {
     <MainLayout>
       <div className="landing-content">
         <h1 style={{fontSize:'3rem'}}>Welcome to DevBank ATM Machine</h1>
+        <div style={{ backgroundImage:`url("${card}")`,
+                        width:'13rem', height:'10rem',
+                        backgroundSize:'cover', }}></div>
         <div className={`slide-button-container ${isSliding ? 'sliding' : ''}`}>
-          <p>Slide to Enter</p>
+          <p style={{fontSize:'1.5rem'}}>Slide to Enter</p>
           <div className="slide-button-border">
             <button
               onMouseDown={handleSlideStart}

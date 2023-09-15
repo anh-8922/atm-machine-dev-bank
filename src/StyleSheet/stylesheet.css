@@ -4,10 +4,11 @@
   padding: 0;
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 body{
   background-color: whitesmoke;
+ 
 }
 :root{
   --main-blue: #134677;
@@ -45,10 +46,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
-    
-    padding: 5rem;
+    padding: 1rem;
   }
   .slide-button-border {
     border: 2px solid grey;
@@ -83,5 +83,20 @@ body{
     text-align: center;
     margin-top: 20px;
   }
+
+.question {
+  position: absolute;
+  width: 30rem;
+  text-align: left;
+  line-height: 1.5;
+  top: 30%;
+  left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: white;
+   padding: 1rem 2rem;
+   border: 1px solid grey;
+   color:black;
+   border-radius: 0.5rem;
+}
 
   

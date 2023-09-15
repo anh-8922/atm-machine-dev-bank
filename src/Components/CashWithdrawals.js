@@ -95,15 +95,15 @@ const ATMApp = () => {
 
   return (
     <MainLayout>
-      <div style={{ backgroundColor:'whitesmoke' , textAlign: 'center', height: '130vh'}}>
-        <h1 className='withdrawal-title'>Get Cash Now</h1>
+      <div style={{ backgroundColor:'whitesmoke' , textAlign: 'center', height: '110vh'}}>
+        <h1 className='withdrawal-title'>Withdrawal Request</h1>
         <div className='cash-withdrawal-box'>
           <div className='balance'>
             <p>Your Current Balance: £{balance}</p>
-            <p>Your Overdraft Allowance: £{overdraftAllowance}</p>
+            <p>Monthly Overdraft Allowance: £{overdraftAllowance}</p>
           </div>
           <div>
-            <h2 style={{fontSize:'1.5rem'}}>Available Notes</h2>
+            <h2 style={{fontSize:'1.3rem'}}>Available Notes</h2>
             <ul className='available-notes'>
               {updatedNotesData.map((note) => (
                 <li key={note.value}>
@@ -116,7 +116,7 @@ const ATMApp = () => {
           </div>
 
           <div className='withdraw-input'>
-            <h2 style={{fontSize:'1.5rem'}}>How much do you want to withdraw?</h2>
+            <h2 style={{fontSize:'1.3rem'}}>How much cash would you like to access?</h2>
             <label>
               <span style={{paddingRight:'1rem'}}>Enter Amount: £</span>
               <input style={{fontSize:'1.5rem'}}
@@ -138,8 +138,8 @@ const ATMApp = () => {
             </div>
           )}
         </div>
-        <button className="cancel-option" style={{left: '0'}} onClick={handleBackClick}><TiArrowBackOutline/>Back</button> 
-        <button className="cancel-option" style={{right: '0'}} onClick={handleCancelClick}>Cancel<VscSignOut/></button>
+        <div className="cancel-option" style={{left: '0'}} onClick={handleBackClick}><TiArrowBackOutline/>Back</div> 
+        <div className="cancel-option" style={{right: '0'}} onClick={handleCancelClick}>Cancel<VscSignOut/></div>
       </div>
     </MainLayout>
   );

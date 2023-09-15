@@ -17,8 +17,8 @@
 }
 .type-list > li {
     background-color: #F49C25;
-    width: 15rem;
-    height: 15rem;
+    width: 13rem;
+    height: 13rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -29,7 +29,7 @@
     text-align: center;
     text-decoration: none;
     color: black;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .popup {
