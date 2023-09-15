@@ -2,7 +2,13 @@
 
 ## Overview
 
-The **DevBank ATM Machine App** is a web application built using React.js, designed to simulate an ATM machine experience. This application allows users to enter their PIN, check their account balance, and make withdrawals. The project was undertaken as part of a coding challenge and is a great example of using React.js to create a functional and interactive web application.
+The **DevBank ATM Machine App** is a web application built using React.js, designed to simulate an ATM machine experience. This application allows users to enter their PIN, check their account balance, and make withdrawals. is a great example of using React.js to create a functional and interactive web application.
+
+## Deployment
+
+The DevBank ATM Machine App is deployed in Vercel and can be accessed at the following address:
+
+[https://atm-machine-dev-bank.vercel.app/](https://atm-machine-dev-bank.vercel.app/)
 
 ## Features
 
