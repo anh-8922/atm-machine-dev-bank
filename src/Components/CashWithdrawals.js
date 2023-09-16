@@ -7,9 +7,13 @@ import { TiArrowBackOutline } from 'react-icons/ti';
 import { VscSignOut } from 'react-icons/vsc';
 import polygon from '../Assets/polygon.jpg';
 
+// CashWithdraw component for handling cash withdrawals
 export default function CashWithdraw() {
+  // Initial balance and overdraft allowance
   const initialBalance = 220;
   const overdraftAllowance = 100;
+
+  // State variables to manage cash withdrawal process
   const [balance, setBalance] = useState(initialBalance);
   const [withdrawalAmount, setWithdrawalAmount] = useState(0);
   const [dispensedAmount, setDispensedAmount] = useState(0);
@@ -24,6 +28,7 @@ export default function CashWithdraw() {
   const [prevUpdatedNotesData, setPrevUpdatedNotesData] = useState(updatedNotesData);
   const [prevOverdraftAmount, setPrevOverdraftAmount] = useState(0);
 
+  // Function to handle the cash withdrawal process
   const handleWithdrawal = () => {
     // Calculate the remaining balance after withdrawal
     const remainingBalance = balance - withdrawalAmount;
@@ -80,7 +85,7 @@ export default function CashWithdraw() {
     }
   };
 
-  // Handle yes/no confirmation options
+  // Function to handle 'Yes' option in the confirmation modal
   const handleConfirmationYes = () => {
     // Update balance
     const newBalance = balance - withdrawalAmount;
@@ -99,6 +104,7 @@ export default function CashWithdraw() {
     alert('Please take your cash. Do you want to carry on?');
   };
 
+  // Function to handle 'No' option in the confirmation modal
   const handleConfirmationNo = () => {
     // Revert balance to previous value
     setBalance(prevBalance);
@@ -113,14 +119,14 @@ export default function CashWithdraw() {
     alert('Thank you for using the service.');
   };
 
-  // Handle back/cancel buttons
+  // Function to navigate back to the previous page or leave the transaction and back to home page
   const navigate = useNavigate();
 
   const handleCancelClick = () => {
     // Use the navigate function to navigate to the home page
     navigate('/');
   };
-  
+    // Use the navigate function to navigate to transaction types
   const handleBackClick = () => {
     navigate('/user/transaction-types');
   };
@@ -129,7 +135,7 @@ export default function CashWithdraw() {
     <MainLayout>
       <div style={{ 
         backgroundImage: `url("${polygon}")`,backgroundSize:'cover', 
-        textAlign: 'center', height: '110vh', width: '100%' 
+        textAlign: 'center', height: '100vh', minWidth: '100%' 
       }}>
         <h1 className='withdrawal-title'>Quick Cash Withdrawal</h1>
         <div className='cash-withdrawal-box'>

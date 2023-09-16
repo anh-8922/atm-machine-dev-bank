@@ -5,7 +5,7 @@ import MainLayout from "../MainLayout";
 import card from '../Assets/card.png';
 
 export default function Landing() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [isSliding, setIsSliding] = useState(false);
 
   const handleSlideStart = () => {

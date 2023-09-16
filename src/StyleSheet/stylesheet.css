@@ -1,25 +1,25 @@
-/* LandingPage.css */
 *{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 1.15rem;
- 
 }
 body{
   background-color: var(--main-blue);
-  height: 100vh;
+  min-height: 100%;
   
 }
 :root{
   --main-blue: #134677;
   --orange: #FE7F02;
 }
+ /*Main Layout CSS*/
+/*===============*/
 .layout-body {
     background-color: var(--main-blue);
     color: var(--main-blue);
- ;
+    
 }
 .heading {
   display: flex;
@@ -29,15 +29,15 @@ body{
   ;
 }
 
+ /* LandingPage CSS starts here*/
+/*============================*/
 .landing-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--main-blue);
-  height: max-content;
   margin: 5rem 1rem;
-  
 }
 
 .welcome {
@@ -46,48 +46,55 @@ body{
   color: whitesmoke;
 }
   
-  .slide-button-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2.2rem;
-    align-items: center;
+.slide-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.2rem;
+  align-items: center;
     
-  }
-  .slide-button-border {
-    border: 2px solid grey;
-    width: 200px;
-    border-radius: 0.5rem;
-  }
-  .slide-button {
-    width: 100px;
-    padding: 10px;
-    background-color: var(--orange);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
+}
+
+.slide-button-border {
+  border: 2px solid grey;
+  width: 200px;
+  border-radius: 0.5rem;
+}
+
+.slide-button {
+  width: 100px;
+  padding: 10px;
+  background-color: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
   
-  .slide-button:hover {
-    background-color: #0056b3;
-  }
+.slide-button:hover {
+  background-color: #0056b3;
+}
   
-  .slide-button.slide-complete {
-    transform: translateX(100%);
-  }
+.slide-button.slide-complete {
+  transform: translateX(100%);
+}
   
-  .slide-button-container.sliding .slide-button {
-    background-color: #ccc;
-    cursor: grabbing;
-  }
+.slide-button-container.sliding .slide-button {
+  background-color: #ccc;
+  cursor: grabbing;
+}
   
-  .redirect-message {
-    text-align: center;
-    margin-top: 20px;
-    color: whitesmoke;
-  }
+.redirect-message {
+  text-align: center;
+  margin-top: 20px;
+  color: whitesmoke;
+}
+
+.question-icon {
+  font-size: 2rem;
+  color: var(--orange);
+}
 
 .question {
   position: absolute;
@@ -96,13 +103,13 @@ body{
   line-height: 1.5;
   top: 30%;
   left: 50%;
-   transform: translate(-50%, -50%);
-   background-color: white;
-   padding: 1rem 2rem;
-   border: 1px solid grey;
-   color:black;
-   border-radius: 0.5rem;
-   z-index: 11;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 2rem;
+  border: 1px solid grey;
+  color:black;
+  border-radius: 0.5rem;
+  z-index: 11;
 }
 
 @media only screen and (max-width: 900px) {
@@ -111,8 +118,9 @@ body{
     font-size: 2rem;
   }
 
-  .question {
-    
+  .question-icon {
+    font-size: 1.8rem;
+    margin: 0.5rem 0
   }
 }
 

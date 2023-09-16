@@ -1,7 +1,6 @@
 .cash-withdrawal-box {
     background-color: whitesmoke;
     color: black;
-    height: max-content;
     display: flex;
     flex-direction: column; 
     align-items: center;
@@ -19,8 +18,8 @@
 }
 
 .withdrawal-title {
-   background-color: var(--main-blue);
-   color: whitesmoke;
+    background-color: var(--main-blue);
+    color: whitesmoke;
     font-size: 2rem;
     padding-bottom: 15rem;
 }
@@ -131,16 +130,10 @@
 .sign-out {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    
-   
-    padding: 1rem 3rem;
-    
-   
+    justify-content: space-between;   
+    padding: 1rem 3rem;   
     width: 100%;
-  
   }
-
 
   .cancel-option {
     background: none;
@@ -161,9 +154,7 @@
     .modal-content {
         top: 18%;
         margin: 1.5rem;
-    }
-
-   
+    }  
 }
 
 @media only screen and (max-width: 600px) {
@@ -172,7 +163,6 @@
     }
     .withdrawal-title{
         font-size: 1.5rem;
-            
     }
 
     .available-notes {
