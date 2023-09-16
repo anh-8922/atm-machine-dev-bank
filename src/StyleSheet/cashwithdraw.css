@@ -171,7 +171,7 @@
     }
 
     .available-notes span {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .withdraw-input {
         padding: 0 0.5rem;
@@ -181,5 +181,12 @@
         top: 15%;
         padding: 1rem 1.5rem;
         margin: 1rem
+    }
+}
+
+@media only screen and (max-width: 436px) {
+    .cash-withdrawal-box {
+        top: 20%;
+        margin: 0 1rem;
     }
 }
