@@ -12,8 +12,16 @@ export default function TransactionTypes() {
     setShowPopup(false);
   };
   // Function to close the popup.
-  const handlePinChangeClick = () => {
+  const handlePopupClick = () => {
     setShowPopup(true);
+  };
+
+  const [changePinService , setChangePinService] = useState(false);
+  const handleChangePinClose = () => {
+    setChangePinService(false);
+  };
+  const handleChangePinClick = () => {
+    setChangePinService(true);
   };
 
   return (
@@ -25,13 +33,13 @@ export default function TransactionTypes() {
             <Link className="type-items" to="/user/transaction-types/cash-withdrawals">Cash Withdrawals</Link>
           </li>
           <li>
-            <Link className="type-items" onClick={handlePinChangeClick}>Transfer</Link>
+            <Link className="type-items" onClick={handlePopupClick}>Transfer</Link>
           </li>
           <li>
-            <Link className="type-items" onClick={handlePinChangeClick}>Deposit</Link>
+            <Link className="type-items" onClick={handlePopupClick}>Deposit</Link>
           </li>
           <li>
-            <Link className="type-items" onClick={handlePinChangeClick}>Change PIN</Link>
+            <Link className="type-items" onClick={handleChangePinClick}>Change PIN</Link>
           </li>
         </ul>
       </div>
@@ -41,6 +49,15 @@ export default function TransactionTypes() {
           <button style={{
             padding:'0.3rem 0.8rem', margin: '1rem 0', borderRadius:'0.5rem'
             }} onClick={handlePopupClose}>Close
+          </button>
+        </div>
+      )}
+      {changePinService && (
+        <div className="popup" style={{  }}>
+          <p>Please contact our helpline at <br/>+ 44 123 456 78 </p>
+          <button style={{
+            padding:'0.3rem 0.8rem', margin: '1rem 0', borderRadius:'0.5rem'
+            }} onClick={handleChangePinClose}>Close
           </button>
         </div>
       )}

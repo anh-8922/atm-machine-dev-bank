@@ -20,7 +20,13 @@
     gap: 2rem;
     list-style-type: none;
 }
-.type-list > li {
+
+
+.type-items {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 1.7rem;
     background-color: #F49C25;
     width: 13rem;
     height: 13rem;
@@ -28,13 +34,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.type-items {
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    font-size: 1.7rem;
 }
 
 .popup {
@@ -51,6 +50,7 @@
      color:black;
      border-radius: 0.5rem;
 }
+
 
 @media only screen and (max-width: 900px) {
     .transaction-types {
