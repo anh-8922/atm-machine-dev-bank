@@ -51,7 +51,7 @@ The DevBank ATM Machine App is deployed in Vercel and can be accessed at the fol
 ## Note
 - **Take-away**: Through this project, I've gained valuable insights into two critical areas: transaction logic and cash handling. Building the app taught me how to manage user transactions effectively. I learned to handle various withdrawal amounts, monitor account balances accurately, and enforce overdraft limits for responsible financial management. Additionally, The limited notes in the ATM machine presented a real-world challenge. It encouraged me to think algorithmically to ensure the optimal distribution of notes during withdrawals, emphasizing the importance of efficient algorithm design for resource management.
 
-These experiences have not only enhanced my problem-solving skills but also provided practical knowledge in financial transaction management and algorithm optimization, which are applicable to a wide range of software development scenarios.
+- These experiences have not only enhanced my problem-solving skills but also provided practical knowledge in financial transaction management and algorithm optimization, which are applicable to a wide range of software development scenarios.
 
 - At this stage, the app is a frontend project designed for a single user. In the future, I plan to expand this project into a full-stack application using the MERN stack, where I'll utilize MongoDB to establish a database for Users and notes. This setup will facilitate the implementation of PIN authentication and enable tracking of available notes, all aimed at delivering a comprehensive financial experience.
 
