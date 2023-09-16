@@ -2,11 +2,11 @@
 
 ## Overview
 
-The **💰 DevBank ATM Machine App 💰** is a web application built using React.js, designed to simulate an ATM machine experience. This application allows users to enter their PIN, check their account balance, and make withdrawals. is a great example of using React.js to create a functional and interactive web application.
+The **💰 DevBank ATM Machine App 💰** is a web application built using React.js, designed to simulate an ATM machine experience.
 
 ## Story
 
-Embark on the Payday Pokémon Challenge! Michael, eager to snag the latest Pokémon game for £270, needs your help to build a slick ATM web app. Users must enter his secret PIN (1111), verified via our secure API, which reveals their account balance onscreen. Michael plans three withdrawals: £140, £50, and £90.
+Embark on the Payday Pokémon Challenge! Michael, eager to snag the latest Pokémon game for £270, needs your help to build a slick ATM web app. He must enter his secret PIN (1111), verified via our secure API, which reveals their account balance onscreen. Michael plans three withdrawals: £140, £50, and £90.
 
 But watch out! Sneaky diggers are swiping our ATMs, so cash is limited: 4 x £5 notes, 15 x £10 notes, and 7 x £20 notes. Your mission? Dispense notes fairly, adjusting for shortages.
 
@@ -20,15 +20,15 @@ The DevBank ATM Machine App is deployed in Vercel and can be accessed at the fol
 
 ## Features
 
-- **PIN Verification**: Users are required to enter their PIN (1111), which is checked against a PIN API to authenticate the user.
+- **PIN Verification**: Michael required to enter his PIN (1111), which is checked against a PIN API to authenticate the user.
 
 - **Account Balance Display**: Upon successful authentication, the user's current account balance is retrieved from the API and displayed on the screen.
 
-- **Withdrawals**: Users can make up to three withdrawals, each for a specific amount.
+- **Withdrawals**: User can make withdrawals, each for a specific amount.
 
 - **Notes Dispensing**: The ATM machine dispenses the appropriate mix of notes (e.g., £5, £10, £20) based on the withdrawal amount and the available notes in the machine.
 
-- **Overdraft Protection**: The ATM allows an overdraft of up to £100 and notifies users if they go overdrawn.
+- **Overdraft Protection**: The ATM allows an overdraft of up to £100 and notifies user if he goes overdrawn.
 
 - **Testing**: Comprehensive unit tests using Jest have been written to ensure the reliability and correctness of the application.
 
@@ -48,11 +48,11 @@ The DevBank ATM Machine App is deployed in Vercel and can be accessed at the fol
 
 - **Jest**: Unit tests have been written using Jest to ensure the reliability and correctness of the application's functions and components.
 
-## Getting Started
+## Note
+- **Take-away**: Through this project, I've gained valuable insights into two critical areas: transaction logic and cash handling. Building the app taught me how to manage user transactions effectively. I learned to handle various withdrawal amounts, monitor account balances accurately, and enforce overdraft limits for responsible financial management. Additionally, The limited notes in the ATM machine presented a real-world challenge. It encouraged me to think algorithmically to ensure the optimal distribution of notes during withdrawals, emphasizing the importance of efficient algorithm design for resource management.
 
-To run the DevBank ATM Machine App locally, follow these steps:
+These experiences have not only enhanced my problem-solving skills but also provided practical knowledge in financial transaction management and algorithm optimization, which are applicable to a wide range of software development scenarios.
 
-1. Clone the repository to your local machine:
+- At this stage, the app is a frontend project designed for a single user. In the future, I plan to expand this project into a full-stack application using the MERN stack, where I'll utilize MongoDB to establish a database for Users and notes. This setup will facilitate the implementation of PIN authentication and enable tracking of available notes, all aimed at delivering a comprehensive financial experience.
 
-   ```shell
-   git clone <repository-url>
+- If you have any question, do not hesitate to contact me at anh-dev@hotmail.com
