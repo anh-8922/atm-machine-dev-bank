@@ -18,7 +18,7 @@ const TransactionTypes = () => {
   return (
     <MainLayout>
       <div className="transaction-types">
-        <h1 className='type-title'>Transaction Types</h1>
+        <h1 className='type-title'>Welcome back Michael! Choose Your Transaction Type</h1>
         <ul className="type-list">
           <li>
             <Link className="type-items" to="/user/transaction-types/cash-withdrawals">

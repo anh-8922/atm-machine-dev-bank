@@ -19,6 +19,11 @@ export default function CashWithdraw() {
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [updatedNotesData, setUpdatedNotesData] = useState(noteData);
 
+  // Create copies of the state values before showing the confirmation modal
+  const [prevBalance, setPrevBalance] = useState(balance);
+  const [prevUpdatedNotesData, setPrevUpdatedNotesData] = useState(updatedNotesData);
+  const [prevOverdraftAmount, setPrevOverdraftAmount] = useState(0);
+
   const handleWithdrawal = () => {
     // Calculate the remaining balance after withdrawal
     const remainingBalance = balance - withdrawalAmount;
@@ -79,12 +84,14 @@ export default function CashWithdraw() {
   const handleConfirmationYes = () => {
     // Update balance
     const newBalance = balance - withdrawalAmount;
+    setPrevBalance(newBalance); // Update the previous balance
     setBalance(newBalance);
 
     // Reset withdrawal input
     setWithdrawalAmount(0);
 
     // Reset overdraft amount
+    setPrevOverdraftAmount(0); // Update the previous overdraft amount
     setOverdraftAmount(0);
 
     // Reset confirmation modal
@@ -93,8 +100,14 @@ export default function CashWithdraw() {
   };
 
   const handleConfirmationNo = () => {
-    // Reset overdraft amount
-    setOverdraftAmount(0);
+    // Revert balance to previous value
+    setBalance(prevBalance);
+
+    // Revert notes data to previous value
+    setUpdatedNotesData(prevUpdatedNotesData);
+
+    // Revert overdraft amount to previous value
+    setOverdraftAmount(prevOverdraftAmount);
 
     setShowConfirmationModal(false);
     alert('Thank you for using the service.');
@@ -118,7 +131,7 @@ export default function CashWithdraw() {
         backgroundImage: `url("${polygon}")`,backgroundSize:'cover', 
         textAlign: 'center', height: '110vh', width: '100%' 
       }}>
-        <h1 className='withdrawal-title'>Withdrawal Request</h1>
+        <h1 className='withdrawal-title'>Quick Cash Withdrawal</h1>
         <div className='cash-withdrawal-box'>
           <div className='balance'>
             <p>Your Current Balance: £{balance}</p>
@@ -169,5 +182,3 @@ export default function CashWithdraw() {
     </MainLayout>
   );
 };
-
-
