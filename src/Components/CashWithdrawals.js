@@ -156,7 +156,7 @@ export default function CashWithdraw() {
           </div>
 
           <div className='withdraw-input'>
-            <h2 style={{ fontSize: '1.3rem' }}>How much cash would you like to access?</h2>
+            <h2 style={{ fontSize: '1.3rem' }}>How much cash would you like to withdraw?</h2>
             <label>
               <span style={{ paddingRight: '1rem' }}>Enter Amount: £</span>
               <input style={{ fontSize: '1.5rem' }}
