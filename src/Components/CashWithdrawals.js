@@ -166,7 +166,9 @@ export default function CashWithdraw() {
             <div className="confirmation-modal">
               <div className='modal-content'>
                 <p>Dispensed Amount: £{dispensedAmount}</p>
-                {overdraftAmount > 0 && <p>Overdraft Amount: £{overdraftAmount}</p>}
+                {overdraftAmount > 0 && <p>Overdraft Amount: £{overdraftAmount} <br/>
+                  <span style={{color:'green', fontWeight:'500'}}>Insufficient balance. Accept overdraft for withdrawal?</span></p>
+                }
                 <p>Total Notes Dispensed: {totalNotesDispensed}</p>
                 <p style={{ fontWeight: 'bold' }}>Do you want to process?</p>
                 <button className='confirmation-options' onClick={handleConfirmationYes}>Yes</button>
