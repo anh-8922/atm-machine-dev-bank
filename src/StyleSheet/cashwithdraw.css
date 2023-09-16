@@ -158,6 +158,11 @@
         font-size: 2rem;
     }
 
+    .modal-content {
+        top: 18%;
+        margin: 1.5rem;
+    }
+
    
 }
 
@@ -165,25 +170,26 @@
     .cash-withdrawal-box {
         top: 20%;
     }
-        .withdrawal-title{
-            font-size: 1.5rem;
+    .withdrawal-title{
+        font-size: 1.5rem;
             
-        }
+    }
 
-        .available-notes {
-            display: grid;
-            text-align: left;
-            grid-template-columns: repeat(2, 1fr); /* 2 columns */
-            grid-template-rows: repeat(2, 1fr); 
-            gap: 0.5rem;
-            list-style-type: none; 
-            padding: 0.5rem 1rem;
-        }
+    .available-notes {
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+    }
 
-        .available-notes span {
-            font-size: 1.2rem;
-        }
-        .withdraw-input {
-            padding: 0 0.5rem;
-        }
+    .available-notes span {
+        font-size: 1.2rem;
+    }
+    .withdraw-input {
+        padding: 0 0.5rem;
+    }
+
+    .modal-content {
+        top: 15%;
+        padding: 1rem 1.5rem;
+        margin: 1rem
+    }
 }
