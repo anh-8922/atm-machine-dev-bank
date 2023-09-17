@@ -5,5 +5,5 @@ const noteData = [
   { note: '50', value: 50, count: 0, imageUrl: 'https://i.postimg.cc/qtcgBTFS/50.jpg' },
 ];
   
-  export default noteData;
+export default noteData;
 

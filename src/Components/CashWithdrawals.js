@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import noteData from '../Data/NoteData'; // Import noteData 
+import userData from '../Data/UserData'; // Import userData
 import '../StyleSheet/cashwithdraw.css';
 import MainLayout from '../MainLayout';
 import { TiArrowBackOutline } from 'react-icons/ti';
@@ -10,8 +11,9 @@ import polygon from '../Assets/polygon.jpg';
 // CashWithdraw component for handling cash withdrawals
 export default function CashWithdraw() {
   // Initial balance and overdraft allowance
-  const initialBalance = 220;
-  const overdraftAllowance = 100;
+  const user = userData.find((item) => item.name === 'michael');
+  const initialBalance = user ? user.balance : 0;
+  const overdraftAllowance = user ? user.overdraft : 0;
 
   // State variables to manage cash withdrawal process
   const [balance, setBalance] = useState(initialBalance);
